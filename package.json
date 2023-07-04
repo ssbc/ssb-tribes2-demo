@@ -19,5 +19,9 @@
   "homepage": "https://github.com/ssbc/ssb-tribes2-demo#readme",
   "devDependencies": {
     "electron": "^25.2.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
