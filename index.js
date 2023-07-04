@@ -1,7 +1,8 @@
 const { createRoot } = require("react-dom/client");
-const { h } = require("./util");
+const { h } = require("./src/util");
+const { App } = require("./src/");
 
 console.log("hello world");
 
 const root = createRoot(document.getElementById("app"));
-root.render(h("h1", "Hello, world"));
+root.render(h(App));
