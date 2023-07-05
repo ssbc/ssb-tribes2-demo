@@ -4,8 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "patch-package",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/ssbc/ssb-tribes2-demo#readme",
   "devDependencies": {
-    "electron": "^25.2.0"
+    "electron": "^25.2.0",
+    "patch-package": "^7.0.0"
   },
   "dependencies": {
     "react": "^18.2.0",
