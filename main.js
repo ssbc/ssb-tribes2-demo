@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require("electron");
 
+const randomId = Math.floor(Math.random() * 1000);
+app.setPath("userData", "/tmp/ssb-tribes2-demo-userdata-" + randomId);
+
 const createWindow = () => {
   const win = new BrowserWindow({
     webPreferences: {
