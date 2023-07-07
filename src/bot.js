@@ -38,7 +38,9 @@ module.exports = function startSbot() {
     .use(require("ssb-friends"))
     .use(require("ssb-ebt"))
     .use(require("ssb-tribes2"))
-    .use(require("ssb-lan"));
+    .use(require("ssb-lan"))
+    .use(require("ssb-subset-rpc"))
+    .use(require("ssb-replication-scheduler"));
 
   const sbot = stack({
     path: dir,
@@ -53,6 +55,17 @@ module.exports = function startSbot() {
     tribes2: {
       // timeoutLow: opts.timeoutLow,
       // timeoutHigh: opts.timeoutHigh,
+    },
+    friends: {
+      hops: 1,
+    },
+    replicationScheduler: {
+      //debouncePeriod: 1,
+      partialReplication: {
+        0: [{}],
+        1: [{ purpose: "main" }, { purpose: "group/additions" }],
+        group: [{ purpose: "$groupSecret" }],
+      },
     },
   });
 
