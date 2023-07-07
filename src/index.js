@@ -2,6 +2,7 @@ const { createElement: h, useState } = require("react");
 const MyRootId = require("./ui/MyRootId");
 const NewConnection = require("./ui/NewConnection");
 const CreateGroup = require("./ui/CreateGroup");
+const GroupInvites = require("./ui/GroupInvites");
 const ListGroups = require("./ui/ListGroups");
 const ViewGroup = require("./ui/ViewGroup");
 
@@ -14,6 +15,7 @@ function App() {
     h(MyRootId),
     h(NewConnection),
     h(CreateGroup),
+    h(GroupInvites),
     h(ListGroups, { setViewedGroup }),
     viewedGroup && h(ViewGroup, { groupId: viewedGroup })
   );

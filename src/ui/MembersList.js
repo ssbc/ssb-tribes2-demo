@@ -1,16 +1,7 @@
 const { useState, createElement: h, useEffect } = require("react");
 const pull = require("pull-stream");
 const { ssb } = require("../ssb");
-
-function isSameSet(a, b) {
-  if (a.size !== b.size) return false;
-
-  for (const el of a) {
-    if (!b.has(el)) return false;
-  }
-
-  return true;
-}
+const { isSameSet } = require("../util");
 
 function MembersList({ groupId }) {
   const [members, setMembers] = useState([]);
