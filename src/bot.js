@@ -35,6 +35,7 @@ module.exports = function startSbot() {
     .use(require("ssb-db2/compat/ebt"))
     .use(require("ssb-db2/compat/db")) // for legacy replicate
     .use(require("ssb-db2/compat/history-stream")) // for legacy replicate
+    .use(require("ssb-friends"))
     .use(require("ssb-ebt"))
     .use(require("ssb-tribes2"))
     .use(require("ssb-lan"));

@@ -31,6 +31,9 @@ dependencies:
   ssb-ebt:
     specifier: 9.1.2
     version: 9.1.2
+  ssb-friends:
+    specifier: 5.1.7
+    version: 5.1.7
   ssb-keys:
     specifier: 8.5.0
     version: 8.5.0
@@ -381,6 +384,10 @@ packages:
       - supports-color
     dev: false
 
+  /async-single@1.0.5:
+    resolution: {integrity: sha512-I0SMZyvxwnr00advlzQbcfztaSEBv3Dw7Vg5i7pJVrXfjqHJSP1wljuOFKanBec5WKd+V4CIF4F9nhsukBikHA==}
+    dev: false
+
   /at-least-node@1.0.0:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
@@ -389,6 +396,14 @@ packages:
   /atomic-file-rw@0.3.0:
     resolution: {integrity: sha512-XMFpe/ub9Mwdlyq3DUdOc/g2sdutDMdYw0XNFSvNGQpYdmxqVmLbeklu5KhemUYyrAj1kIrwoHOx6IxA3a7w3A==}
     dependencies:
+      idb-kv-store: 4.5.0
+      mutexify: 1.4.0
+    dev: false
+
+  /atomic-file@2.1.1:
+    resolution: {integrity: sha512-Eh6pW+fRC2/1RxPq3hO8+PkZKv+wujzKky2MP/n69eC8yMkbNFfuEb/riZHqf13M7gr6Hvglpk/kISgBSBb6bQ==}
+    dependencies:
+      flumecodec: 0.0.1
       idb-kv-store: 4.5.0
       mutexify: 1.4.0
     dev: false
@@ -651,6 +666,17 @@ packages:
       mimic-response: 3.1.0
     dev: true
 
+  /deep-equal@1.1.1:
+    resolution: {integrity: sha512-yd9c5AdiqVcR+JjcwUQb9DkhJc8ngNr0MahEBGvDiJw8puWab2yZlh+nkasOnZP+EGTAP6rRp2JzJhJZzvNF8g==}
+    dependencies:
+      is-arguments: 1.1.1
+      is-date-object: 1.0.5
+      is-regex: 1.1.4
+      object-is: 1.1.5
+      object-keys: 1.1.1
+      regexp.prototype.flags: 1.5.0
+    dev: false
+
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
@@ -696,6 +722,13 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dynamic-dijkstra@1.0.2:
+    resolution: {integrity: sha512-1N+eCCrepIeK1+qtWrMEO1CV68Hn+TLbiR9c70VB3xnut3DmUxT+3T7sRHhb0mpK2F/74IfP+loQDriU2W9lkA==}
+    dependencies:
+      heap: 0.2.7
+      rng: 0.2.2
+    dev: false
 
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
@@ -1095,6 +1128,12 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
+  /flumecodec@0.0.0:
+    resolution: {integrity: sha512-1UhNtCE8Al1mMrEqvRGxKU2GoZHXPKLWmAm6Oe2J9x+oQeMinCW9jpegJaEuGgUtro94MogbObFjEBFJHc36fA==}
+    dependencies:
+      level-codec: 6.2.0
+    dev: false
+
   /flumecodec@0.0.1:
     resolution: {integrity: sha512-JT0xivzdV7uTucjsLMw6JhK2e1K5TmU4fGmoQqnrJbydgY/V6+m71QoxX5ZtRR1pKoD48uhPDWWE6G5MlNoGkg==}
     dependencies:
@@ -1114,6 +1153,18 @@ packages:
       pull-looper: 1.0.0
       pull-stream: 3.7.0
       uint48be: 2.0.1
+    dev: false
+
+  /flumeview-reduce@1.4.0:
+    resolution: {integrity: sha512-ShCMtY5YZl3icnUAWTfwzRXSGN1AUo4Isj1wTRLpMMNgM9p1T0gc6N+r1ajampf1GO19SkqrgZHdPPOaEitvhg==}
+    dependencies:
+      async-single: 1.0.5
+      atomic-file: 2.1.1
+      deep-equal: 1.1.1
+      flumecodec: 0.0.0
+      obv: 0.0.1
+      pull-notify: 0.1.2
+      pull-stream: 3.7.0
     dev: false
 
   /for-each@0.3.3:
@@ -1333,6 +1384,10 @@ packages:
 
   /hashlru@2.3.0:
     resolution: {integrity: sha512-0cMsjjIC8I+D3M44pOQdsy0OHXGLVz6Z0beRuufhKa0KfaD2wGwAev6jILzXsd3/vpnNQJmWyZtIILqM1N+n5A==}
+    dev: false
+
+  /heap@0.2.7:
+    resolution: {integrity: sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==}
     dev: false
 
   /hoox@0.0.1:
@@ -1752,6 +1807,15 @@ packages:
       graceful-fs: 4.2.11
     dev: true
 
+  /layered-graph@1.2.0:
+    resolution: {integrity: sha512-VnjZHUyaXXsOR6KZ8JjTbkyjtq8VaU5ncGJ8cKBvg2bSLqVHE4bcGJ+20dDE7T84sss9d/BCHRj34Yh2fz9sbg==}
+    dependencies:
+      dynamic-dijkstra: 1.0.2
+      pull-cont: 0.1.1
+      pull-notify: 0.1.2
+      pull-stream: 3.7.0
+    dev: false
+
   /level-codec@6.2.0:
     resolution: {integrity: sha512-J437PvCMZZKNT88+VRh6dkmh1ndZzwGwDzb5ZZl3QEsl+U9wIlt8hG+Y1gXVOhH75gf8JyceKGiG6WFUBbxyGQ==}
     dev: false
@@ -2126,6 +2190,14 @@ packages:
     resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
     dev: false
 
+  /object-is@1.1.5:
+    resolution: {integrity: sha512-3cyDsyHgtmi7I7DfSSI2LDp6SK2lwvtbg0p0R1e0RvTqF5ceGx+K2dfSjm1bKDMVCFEDAQvy+o8c6a7VujOddw==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      define-properties: 1.2.0
+    dev: false
+
   /object-keys@1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
     engines: {node: '>= 0.4'}
@@ -2378,6 +2450,10 @@ packages:
     resolution: {integrity: sha512-i3w+xZ3DCtTVz8S62hBOuNLRHqVDsHMNZmgrZsjPnsxXUgbWtXEee84lo1XswE7W2a3WHyqsNuDJTjVLAQR8xg==}
     dev: false
 
+  /pull-cont@0.1.1:
+    resolution: {integrity: sha512-OAJRFBoEW00F0++qkeNuIWdaUwqrlZGj/6JAm+094iWKDnuzBXUWi2IipDqNa+yzIJrOE8BjwugiyGtLvPAk4w==}
+    dev: false
+
   /pull-cursor@3.0.0:
     resolution: {integrity: sha512-95lZVSF2eSEdOmUtlOBaD9p5YOvlYeCr5FBv2ySqcj/4rpaXI6d8OH+zPHHjKAf58R8QXJRZuyfHkcCX8TZbAg==}
     dependencies:
@@ -2402,6 +2478,10 @@ packages:
     dependencies:
       pull-many: 1.0.9
       pull-stream: 3.7.0
+    dev: false
+
+  /pull-flatmap@0.0.1:
+    resolution: {integrity: sha512-9BgwZPZ6J22kPf9ExoVI3m2yMHdCK8uPf58p6L63t36IgH7NrCX+p3QV8cQ4JmYjwvXDZzimVuJ7IW7iLxm7cA==}
     dev: false
 
   /pull-goodbye@0.0.3:
@@ -2736,6 +2816,10 @@ packages:
     hasBin: true
     dependencies:
       glob: 10.3.1
+    dev: false
+
+  /rng@0.2.2:
+    resolution: {integrity: sha512-3F/A3swXdqb4JLpF22zwlCllyXlUWEE3T35GzJ+Vvtx4HnUYVAXovaK2TyUC04UlpxdVxB+E7HaKdDrGeOcJuA==}
     dev: false
 
   /roarr@2.15.4:
@@ -3254,6 +3338,26 @@ packages:
       ssb-classic: 1.1.0
       ssb-index-feeds: 0.10.2
       ssb-network-errors: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /ssb-friends@5.1.7:
+    resolution: {integrity: sha512-oBoMmcw5URa16CXM7LV1YG+YAGdwsQHkHevkh1VVKqhxxi8UAQ1qseb0iQ9Xdzwgadh9lRaW/aGz+175xrcxig==}
+    engines: {node: '>=10'}
+    dependencies:
+      bipf: 1.9.0
+      flumecodec: 0.0.1
+      flumeview-reduce: 1.4.0
+      layered-graph: 1.2.0
+      pull-cont: 0.1.1
+      pull-flatmap: 0.0.1
+      pull-level: 2.0.4
+      pull-notify: 0.1.2
+      pull-pushable: 2.2.0
+      pull-stream: 3.7.0
+      ssb-db2: 6.3.3
+      ssb-ref: 2.16.0
     transitivePeerDependencies:
       - supports-color
     dev: false
