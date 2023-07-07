@@ -12,8 +12,8 @@ function App() {
   return h(
     "div",
     {},
-    h(MyRootId),
     h(NewConnection),
+    h(MyRootId),
     h(CreateGroup),
     h(GroupInvites),
     h(ListGroups, { setViewedGroup }),
