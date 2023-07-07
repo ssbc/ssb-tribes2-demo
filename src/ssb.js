@@ -9,10 +9,20 @@ const {
 const startSbot = require("./bot");
 
 const ssb = startSbot();
-ssb.lan.start();
-console.log("lan started");
-// TODO await
-//ssb.tribes2.start();
+
+ssb.tribes2.start();
+
+ssb.on("rpc:connect", (peer) => {
+  // follow anyone we connect to
+  return p(ssb.db.create)({
+    content: {
+      type: "contact",
+      contact: peer.id,
+      following: true,
+    },
+  });
+});
+
 p(ssb.db.create)({
   content: {
     type: "test",
@@ -28,15 +38,6 @@ p(ssb.db.create)({
     })
   );
 });
-
-console.log("about to pull discovered peers in ssb file");
-// TODO: remove. doesn't seem to work, at least on same computer
-pull(
-  ssb.lan.discoveredPeers(),
-  pull.drain((peer) => {
-    console.log("found peer in ssb file:", peer);
-  })
-);
 
 function whoami() {
   return ssb.id;

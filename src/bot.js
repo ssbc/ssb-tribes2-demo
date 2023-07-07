@@ -38,7 +38,6 @@ module.exports = function startSbot() {
     .use(require("ssb-friends"))
     .use(require("ssb-ebt"))
     .use(require("ssb-tribes2"))
-    .use(require("ssb-lan"))
     .use(require("ssb-subset-rpc"))
     .use(require("ssb-replication-scheduler"));
 

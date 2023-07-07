@@ -25,25 +25,11 @@ function NewConnection() {
         onSubmit: (e) => {
           e.preventDefault();
           p(ssb.connect)(address)
-            .then((other) => {
+            .then(() => {
               console.log("connected");
-
-              // follow them as well
-              return p(ssb.db.create)({
-                content: {
-                  type: "contact",
-                  contact: other.id,
-                  following: true,
-                },
-              });
             })
-            .then(() => console.log("Followed as well"))
             .catch((err) =>
-              console.error(
-                "Didn't manage to connect to or follow",
-                address,
-                err
-              )
+              console.error("Didn't manage to connect to", address, err)
             );
         },
       },
@@ -52,7 +38,7 @@ function NewConnection() {
         placeholder: "Address to connect to",
         onChange: (e) => setAddress(e.target.value),
       }),
-      h("button", {}, "Connect")
+      h("button", {}, "Connect and follow")
     )
   );
 }
