@@ -26,7 +26,7 @@ function ListGroups({ setViewedGroup }) {
   return h(
     "div",
     { style: { margin: "1rem" } },
-    h("div", {}, h("span", {}, "Groups you're a member of:")),
+    h("div", {}, h("span", {}, "Groups I'm a member of:")),
     h(
       "ul",
       {},

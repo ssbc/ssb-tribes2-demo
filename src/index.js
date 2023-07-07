@@ -1,5 +1,5 @@
 const { createElement: h, useState } = require("react");
-const { whoami } = require("./ssb");
+const MyRootId = require("./ui/MyRootId");
 const NewConnection = require("./ui/NewConnection");
 const CreateGroup = require("./ui/CreateGroup");
 const ListGroups = require("./ui/ListGroups");
@@ -11,7 +11,7 @@ function App() {
   return h(
     "div",
     {},
-    h("div", {}, "My ssb id: " + whoami()),
+    h(MyRootId),
     h(NewConnection),
     h(CreateGroup),
     h(ListGroups, { setViewedGroup }),
