@@ -17,7 +17,7 @@ function App() {
     h(CreateGroup),
     h(GroupInvites),
     h(ListGroups, { setViewedGroup }),
-    viewedGroup && h(ViewGroup, { groupId: viewedGroup })
+    viewedGroup && h(ViewGroup, { groupId: viewedGroup, key: viewedGroup })
   );
 }
 
