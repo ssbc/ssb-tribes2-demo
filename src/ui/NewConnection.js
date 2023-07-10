@@ -26,7 +26,7 @@ function NewConnection() {
           e.preventDefault();
           p(ssb.connect)(address)
             .then(() => {
-              setAddress("");
+              //setAddress("");
             })
             .catch((err) =>
               console.error("Didn't manage to connect to", address, err)

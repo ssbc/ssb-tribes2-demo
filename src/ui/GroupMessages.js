@@ -36,7 +36,7 @@ function GroupMessages({ groupId }) {
     "div",
     {},
     messages
-      .toReversed()
+      .toSorted((a, b) => b.value.timestamp - a.value.timestamp)
       .map((msg) => h("div", { key: msg.key }, msg?.value?.content?.text))
   );
 }
