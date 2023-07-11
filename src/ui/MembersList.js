@@ -35,7 +35,12 @@ function MembersList({ groupId }) {
         h(
           "li",
           { key: member, style: { marginBottom: "0.5rem" } },
-          h("a", {}, member)
+          h("span", {}, member),
+          h(
+            "button",
+            { onClick: () => ssb.tribes2.excludeMembers(groupId, [member]) },
+            "Exclude"
+          )
         )
       )
     )

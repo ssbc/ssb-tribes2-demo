@@ -2,7 +2,7 @@ const { useState, createElement: h, useEffect } = require("react");
 const pull = require("pull-stream");
 const { ssb } = require("../ssb");
 
-function ListGroups({ setViewedGroup }) {
+function ListGroups({ viewedGroup, setViewedGroup }) {
   const [groups, setGroups] = useState([]);
 
   useEffect(() => {
@@ -14,6 +14,28 @@ function ListGroups({ setViewedGroup }) {
 
         if (!groupSet.has(group.id)) {
           groupSet.add(group.id);
+
+          setGroups([...groupSet]);
+        }
+      }))
+    );
+
+    return () => drain.abort();
+  });
+
+  useEffect(() => {
+    let drain;
+    pull(
+      ssb.tribes2.list({ live: true, excluded: true }),
+      (drain = pull.drain((group) => {
+        const groupSet = new Set(groups);
+
+        if (groupSet.has(group.id)) {
+          if (viewedGroup === group.id) {
+            setViewedGroup(null);
+          }
+
+          groupSet.delete(group.id);
 
           setGroups([...groupSet]);
         }
