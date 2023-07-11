@@ -24,7 +24,7 @@ function NewConnection() {
       {
         onSubmit: (e) => {
           e.preventDefault();
-          p(ssb.connect)(address)
+          p(ssb.conn.connect)(address)
             .then(() => {
               //setAddress("");
             })

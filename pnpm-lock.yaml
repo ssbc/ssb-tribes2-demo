@@ -25,6 +25,9 @@ dependencies:
   ssb-classic:
     specifier: 1.1.0
     version: 1.1.0
+  ssb-conn:
+    specifier: 6.0.4
+    version: 6.0.4(secret-stack@6.4.2)
   ssb-db2:
     specifier: 7.1.1
     version: 7.1.1
@@ -37,17 +40,14 @@ dependencies:
   ssb-keys:
     specifier: 8.5.0
     version: 8.5.0
-  ssb-lan:
-    specifier: 1.2.3
-    version: 1.2.3(secret-stack@6.4.2)
   ssb-meta-feeds:
     specifier: 0.39.0
     version: 0.39.0
   ssb-replication-scheduler:
-    specifier: ^3.1.0
+    specifier: 3.1.0
     version: 3.1.0(async-append-only-log@4.3.10)
   ssb-subset-rpc:
-    specifier: ^0.3.6
+    specifier: 0.3.6
     version: 0.3.6
   ssb-tribes2:
     specifier: 1.3.0
@@ -712,12 +712,6 @@ packages:
     dev: true
     optional: true
 
-  /dgram-broadcast@1.0.0:
-    resolution: {integrity: sha512-7IPzhuQZVnU2iGo+Eq+dRNpYvlCkT7/5yD6BHx5P6MtT/cDxajR7Qh4+ve2WamsXaXVRLvj16ah8YIF7qcXOLw==}
-    engines: {node: '>=12'}
-    hasBin: true
-    dev: false
-
   /discontinuous-range@1.0.0:
     resolution: {integrity: sha512-c68LpLbO+7kP/b1Hr1qs8/BJ09F5khZGTxqxZuhzxpmwJKOgRFHJWIb9/KmqnqHhLdO55aOxFH/EGBvUQbL/RQ==}
     dev: false
@@ -1361,6 +1355,10 @@ packages:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /has-network2@0.0.3:
+    resolution: {integrity: sha512-EvEZguA+LkyiS8G/Qks5I6imKnM2Z3NPN3eoQhviUQ7O6/d8nyZ7sDozBk6kTIA+Qj/S/V8ubRA1rqJcxc3qBQ==}
+    dev: false
 
   /has-property-descriptors@1.0.0:
     resolution: {integrity: sha512-62DVLZGoiEBDHQyqG4w9xCuZ7eJEwNmJRWw2VY84Oedb7WFcA27fiEVe8oUQx9hAUJ4ekurquucTGwsyO1XGdQ==}
@@ -2235,6 +2233,14 @@ packages:
     resolution: {integrity: sha512-cG6v76kgWh48urwdsFSkxQlKWCKFYkxZJMhOIG9Aj1uPKTnNW9Hvo/ROyBfGzqaZD3K75K3jhsanKssRPkNKYA==}
     dev: false
 
+  /on-change-network-strict@1.0.0:
+    resolution: {integrity: sha512-ldHCpTJWgr5KUJy3/TVoSGNwBUA8BP9UFmd0iQqe4aGaXY4PJyzQPiVBIo8VBSlSoKyaJY3vcpW0hixZb6gPaA==}
+    dev: false
+
+  /on-wakeup@1.0.1:
+    resolution: {integrity: sha512-3ufOvnTvh39ah2/TT++HpLailHVmEVVrKtzKLKifAUyWbulKLGGJGOF7ywKC4k/iQGmn9KooV6WmQl/6BVwklA==}
+    dev: false
+
   /once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
@@ -2561,6 +2567,14 @@ packages:
 
   /pull-pause@0.0.2:
     resolution: {integrity: sha512-yQs63NDgD/FeAsdF7INpy4uDolkstkS4Gx1Z3BvMR2gQS8RREJd2tsy6d/K6T+/CDStGnCQI7JLrkjz10YNiSA==}
+    dev: false
+
+  /pull-ping@2.0.3:
+    resolution: {integrity: sha512-nbY4yHnMesJBrvkbhMim4VXUC9k1VCkgrkQu49pf8mxFbmb/U2KQrsuePvSmLjRL+VgkBVRSUXUoOY7DtSvhKw==}
+    dependencies:
+      pull-pushable: 2.2.0
+      pull-stream: 3.7.0
+      statistics: 3.3.0
     dev: false
 
   /pull-pushable@2.2.0:
@@ -3243,6 +3257,90 @@ packages:
       ssb-ref: 2.16.0
     dev: false
 
+  /ssb-conn-db@1.0.5:
+    resolution: {integrity: sha512-2rbqjvlDMTke2/qgauA415QSQ4hUJziXHqcXuC2Yh1uPrCDXHXrp0dhCchn0b/taEeL0Ppqo/Tsy6szQdqlEDw==}
+    dependencies:
+      atomic-file-rw: 0.3.0
+      debug: 4.3.4
+      multiserver-address: 1.0.1
+      pull-notify: 0.1.2
+      ssb-ref: 2.16.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /ssb-conn-hub@1.2.1:
+    resolution: {integrity: sha512-EazMSgPJSOZTp/NdhUOq4kduAliT9k0GNJvao3Muvqk4Y17V4yIwCKt8SENHI5BMz2ATrDmFLj9uf5z/83Txww==}
+    dependencies:
+      debug: 4.3.4
+      ip: 1.1.8
+      multiserver: 3.8.2
+      multiserver-address: 1.0.1
+      promisify-tuple: 1.2.0
+      pull-cat: 1.1.11
+      pull-notify: 0.1.2
+      pull-stream: 3.7.0
+      ssb-ref: 2.16.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: false
+
+  /ssb-conn-query@1.2.2:
+    resolution: {integrity: sha512-pvCU8oxpX9sBap6oBrLUwDGAYnHSxkhYAYnj6RxGNotPKDIRZUBZB04yQ4nA1rHm7oHOnBgcuK0GRWls78pnkQ==}
+    dependencies:
+      ssb-conn-db: 1.0.5
+      ssb-conn-hub: 1.2.1
+      ssb-conn-staging: 1.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: false
+
+  /ssb-conn-staging@1.0.0:
+    resolution: {integrity: sha512-NOy1qZoBkhH0XNzLteaaKKePXigEJSCntD4RPRU6vWLMlQ10+SzlIz4TWKgvEVx0LfCe6tEx/vhQf6vBWO/Ylw==}
+    dependencies:
+      debug: 4.3.4
+      multiserver-address: 1.0.1
+      pull-cat: 1.1.11
+      pull-notify: 0.1.2
+      pull-stream: 3.7.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /ssb-conn@6.0.4(secret-stack@6.4.2):
+    resolution: {integrity: sha512-rCjpBBPKx9fe3mmrPUcdVz3voE490SqE4BWkBkQuEBi9d/WEMnJymPSJklHN5jmW2Yv4cDIMhnvbfOqu3P18ag==}
+    peerDependencies:
+      secret-stack: '>=6.2.0'
+    dependencies:
+      debug: 4.3.4
+      has-network2: 0.0.3
+      ip: 1.1.8
+      on-change-network-strict: 1.0.0
+      on-wakeup: 1.0.1
+      pull-notify: 0.1.2
+      pull-pause: 0.0.2
+      pull-ping: 2.0.3
+      pull-stream: 3.7.0
+      secret-stack: 6.4.2
+      secret-stack-decorators: 1.1.0
+      ssb-conn-db: 1.0.5
+      ssb-conn-hub: 1.2.1
+      ssb-conn-query: 1.2.2
+      ssb-conn-staging: 1.0.0
+      ssb-ref: 2.16.0
+      ssb-typescript: 2.8.0
+      statistics: 3.3.0
+      ziii: 1.0.2
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: false
+
   /ssb-db2@6.3.3:
     resolution: {integrity: sha512-H5WztPw1lJmUR1e12McRABT4OStiwygDutirHhx1P520ssu5pTmuKrcUM/uSaEPbEPsLif17HpdKKd1fK2uxYg==}
     dependencies:
@@ -3424,24 +3522,6 @@ packages:
       ssb-uri2: 2.4.1
     dev: false
 
-  /ssb-lan@1.2.3(secret-stack@6.4.2):
-    resolution: {integrity: sha512-HJdc9oLIYO4u2eE9F3w8aXDP+idUiJ+ODcJKCKY8VKAlyn8psP4TC+Ol9VpT8NzFdOKQ5LnaAW9yThawfi2VUg==}
-    peerDependencies:
-      secret-stack: '>=6.2.0'
-    dependencies:
-      debug: 4.3.4
-      dgram-broadcast: 1.0.0
-      ip: 1.1.8
-      non-private-ip: 2.2.0
-      pull-notify: 0.1.2
-      secret-stack: 6.4.2
-      secret-stack-decorators: 1.1.0
-      ssb-keys: 8.5.0
-      ssb-ref: 2.16.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /ssb-meta-feeds@0.39.0:
     resolution: {integrity: sha512-vnfGA5FT0iHVMTE3Ore10qEi2Bpi2TqIiD4FvHbU+rdBOJyKKE0E3KwDFWhlqGDB5YwSt9YP364WbEjn1VTLQw==}
     dependencies:
@@ -3593,6 +3673,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       ssb-typescript: 2.8.0
+    dev: false
+
+  /statistics@3.3.0:
+    resolution: {integrity: sha512-9+dmo0XcSK1AU6/uNuSUV/9/KnGUT+7ZKeL+J4IWcjcczflFTWwYQaInBBSo2zyEFVkFd59bGVxzZ8SSBWC66g==}
     dev: false
 
   /stop-iteration-iterator@1.0.0:
@@ -3925,3 +4009,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /ziii@1.0.2:
+    resolution: {integrity: sha512-q1FogtBIchy1W0fkxUpe6A4n4WUvAM+hAHN1J6LjBNCV42ZegeC5JSz0mcNv4qxnI0V4cL4FNeEhPMm97Ed0kA==}
+    dev: false

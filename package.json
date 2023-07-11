@@ -32,6 +32,7 @@
     "ssb-bendy-butt": "1.0.2",
     "ssb-box2": "7.1.0",
     "ssb-classic": "1.1.0",
+    "ssb-conn": "6.0.4",
     "ssb-db2": "7.1.1",
     "ssb-ebt": "9.1.2",
     "ssb-friends": "5.1.7",
