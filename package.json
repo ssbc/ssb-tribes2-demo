@@ -40,6 +40,6 @@
     "ssb-meta-feeds": "0.39.0",
     "ssb-replication-scheduler": "3.1.0",
     "ssb-subset-rpc": "0.3.6",
-    "ssb-tribes2": "1.3.0"
+    "ssb-tribes2": "github:ssbc/ssb-tribes2#crash-epoch-init"
   }
 }

@@ -50,8 +50,8 @@ dependencies:
     specifier: 0.3.6
     version: 0.3.6
   ssb-tribes2:
-    specifier: 1.3.0
-    version: 1.3.0(async-append-only-log@4.3.10)
+    specifier: github:ssbc/ssb-tribes2#crash-epoch-init
+    version: github.com/ssbc/ssb-tribes2/c2e44dcf6911461a88fd482235aa2ada6117a5ef(async-append-only-log@4.3.10)
 
 devDependencies:
   electron:
@@ -3599,7 +3599,7 @@ packages:
       ssb-meta-feeds: 0.39.0
       ssb-network-errors: 1.0.1
       ssb-subset-ql: 1.0.1
-      ssb-tribes2: 1.3.0(async-append-only-log@4.3.10)
+      ssb-tribes2: 1.2.0(async-append-only-log@4.3.10)
     transitivePeerDependencies:
       - async-append-only-log
       - supports-color
@@ -3626,8 +3626,8 @@ packages:
       - supports-color
     dev: false
 
-  /ssb-tribes2@1.3.0(async-append-only-log@4.3.10):
-    resolution: {integrity: sha512-ocAoYQnst75iF3RZYv0+7iTPYtttOQivbyy29TlzJKMdsTUvGwTfgpDMN9au0Q6WP1YWJ0YEtDeSzvUPUQRqIw==}
+  /ssb-tribes2@1.2.0(async-append-only-log@4.3.10):
+    resolution: {integrity: sha512-SnxiAZogQQhd3o1lrPk4VFddk7tVWciuc+mq8XgPuCQ1GVze/i7brByXmvrUHoGl5s0wcuWDxpXNWOq3DeUN/w==}
     engines: {node: '>=16'}
     dependencies:
       '@tangle/overwrite-fields': 2.0.3
@@ -3639,6 +3639,7 @@ packages:
       clarify-error: 1.0.0
       envelope-js: 1.3.2
       envelope-spec: 1.1.1
+      fast-deep-equal: 3.1.3
       is-canonical-base64: 1.1.1
       jitdb: 7.0.7(async-append-only-log@4.3.10)
       lodash.chunk: 4.2.0
@@ -3651,7 +3652,6 @@ packages:
       pull-paramap: 1.2.2
       pull-stream: 3.7.0
       set.prototype.difference: 1.0.2
-      set.prototype.issubsetof: 1.0.1
       ssb-bfe: 3.7.0
       ssb-box2: 7.1.0
       ssb-db2: 7.1.1
@@ -4012,4 +4012,45 @@ packages:
 
   /ziii@1.0.2:
     resolution: {integrity: sha512-q1FogtBIchy1W0fkxUpe6A4n4WUvAM+hAHN1J6LjBNCV42ZegeC5JSz0mcNv4qxnI0V4cL4FNeEhPMm97Ed0kA==}
+    dev: false
+
+  github.com/ssbc/ssb-tribes2/c2e44dcf6911461a88fd482235aa2ada6117a5ef(async-append-only-log@4.3.10):
+    resolution: {tarball: https://codeload.github.com/ssbc/ssb-tribes2/tar.gz/c2e44dcf6911461a88fd482235aa2ada6117a5ef}
+    id: github.com/ssbc/ssb-tribes2/c2e44dcf6911461a88fd482235aa2ada6117a5ef
+    name: ssb-tribes2
+    version: 1.2.0
+    engines: {node: '>=16'}
+    dependencies:
+      '@tangle/overwrite-fields': 2.0.3
+      '@tangle/reduce': 5.0.5
+      '@tangle/strategy': 4.1.2
+      base64-url: 2.3.3
+      bipf: 1.9.0
+      butt64: 2.0.1
+      clarify-error: 1.0.0
+      envelope-js: 1.3.2
+      envelope-spec: 1.1.1
+      is-canonical-base64: 1.1.1
+      jitdb: 7.0.7(async-append-only-log@4.3.10)
+      lodash.chunk: 4.2.0
+      lodash.set: 4.3.2
+      private-group-spec: 8.0.0
+      pull-abortable: 4.1.1
+      pull-defer: 0.2.3
+      pull-flat-merge: 2.0.3
+      pull-many: 1.0.9
+      pull-paramap: 1.2.2
+      pull-stream: 3.7.0
+      set.prototype.difference: 1.0.2
+      set.prototype.issubsetof: 1.0.1
+      ssb-bfe: 3.7.0
+      ssb-box2: 7.1.0
+      ssb-db2: 7.1.1
+      ssb-meta-feeds: 0.39.0
+      ssb-private-group-keys: 1.1.2
+      ssb-ref: 2.16.0
+      ssb-uri2: 2.4.1
+    transitivePeerDependencies:
+      - async-append-only-log
+      - supports-color
     dev: false
