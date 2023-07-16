@@ -67,7 +67,11 @@ module.exports = function startSbot() {
       partialReplication: {
         0: [{}],
         1: [{ purpose: "main" }, { purpose: "group/additions" }],
-        group: [{ purpose: "$groupSecret" }, { purpose: "group/additions" }],
+        group: [
+          { purpose: "main" },
+          { purpose: "$groupSecret" },
+          { purpose: "group/additions" },
+        ],
       },
     },
   });
