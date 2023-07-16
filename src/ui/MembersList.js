@@ -11,14 +11,19 @@ function MembersList({ groupId }) {
     pull(
       ssb.tribes2.listMembers(groupId, { live: true }),
       pull.map((members) => members.added),
-      (drain = pull.drain((currentMembers) => {
-        const oldMembersSet = new Set(members);
-        const currentMembersSet = new Set(currentMembers);
+      (drain = pull.drain(
+        (currentMembers) => {
+          const oldMembersSet = new Set(members);
+          const currentMembersSet = new Set(currentMembers);
 
-        if (!isSameSet(oldMembersSet, currentMembersSet)) {
-          setMembers(currentMembers);
+          if (!isSameSet(oldMembersSet, currentMembersSet)) {
+            setMembers(currentMembers);
+          }
+        },
+        (err) => {
+          if (err) console.error("Error on streaming members list:", err);
         }
-      }))
+      ))
     );
 
     return () => drain.abort();

@@ -45,6 +45,9 @@ module.exports = function startSbot() {
   const sbot = stack({
     path: dir,
     keys,
+    // magically makes connections last longer
+    // https://github.com/ssbc/secret-stack/blob/f281c6421f2e0ab7526d8bc83114f52fb663ca45/src/core.ts#L121
+    timers: {},
     ebt: {
       // logging: true,
     },
@@ -64,7 +67,11 @@ module.exports = function startSbot() {
       partialReplication: {
         0: [{}],
         1: [{ purpose: "main" }, { purpose: "group/additions" }],
-        group: [{ purpose: "$groupSecret" }],
+        group: [
+          { purpose: "main" },
+          { purpose: "$groupSecret" },
+          { purpose: "group/additions" },
+        ],
       },
     },
   });
