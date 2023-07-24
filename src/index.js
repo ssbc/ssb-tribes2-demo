@@ -1,5 +1,6 @@
 const { createElement: h, useState } = require("react");
 const MyRootId = require("./ui/MyRootId");
+const SecurityWarning = require("./ui/SecurityWarning");
 const NewConnection = require("./ui/NewConnection");
 const Connections = require("./ui/Connections");
 const CreateGroup = require("./ui/CreateGroup");
@@ -13,6 +14,7 @@ function App() {
   return h(
     "div",
     {},
+    h(SecurityWarning),
     h(NewConnection),
     h(Connections),
     h(MyRootId),
