@@ -1,3 +1,4 @@
+const { promisify: p } = require("util");
 const { useState, createElement: h, useEffect } = require("react");
 const pull = require("pull-stream");
 const { ssb } = require("../ssb");
@@ -31,7 +32,23 @@ function Connections() {
     h(
       "ul",
       { style: { height: "75px", overflowY: "scroll" } },
-      connections.map((conn) => h("li", { key: conn }, conn))
+      connections.map((conn) =>
+        h(
+          "li",
+          { key: conn, style: { marginBottom: "0.5rem" } },
+          h("span", {}, conn),
+          h(
+            "button",
+            {
+              onClick: () =>
+                p(ssb.conn.disconnect)(conn).catch((err) =>
+                  console.error("Didn't manage to disconnect from", conn, err)
+                ),
+            },
+            "Disconnect"
+          )
+        )
+      )
     )
   );
 }
