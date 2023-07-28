@@ -40,6 +40,9 @@ dependencies:
   ssb-keys:
     specifier: 8.5.0
     version: 8.5.0
+  ssb-lan:
+    specifier: 1.2.3
+    version: 1.2.3(secret-stack@6.4.2)
   ssb-meta-feeds:
     specifier: 0.39.0
     version: 0.39.0
@@ -711,6 +714,12 @@ packages:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
     dev: true
     optional: true
+
+  /dgram-broadcast@1.0.0:
+    resolution: {integrity: sha512-7IPzhuQZVnU2iGo+Eq+dRNpYvlCkT7/5yD6BHx5P6MtT/cDxajR7Qh4+ve2WamsXaXVRLvj16ah8YIF7qcXOLw==}
+    engines: {node: '>=12'}
+    hasBin: true
+    dev: false
 
   /discontinuous-range@1.0.0:
     resolution: {integrity: sha512-c68LpLbO+7kP/b1Hr1qs8/BJ09F5khZGTxqxZuhzxpmwJKOgRFHJWIb9/KmqnqHhLdO55aOxFH/EGBvUQbL/RQ==}
@@ -3520,6 +3529,24 @@ packages:
       mkdirp: 0.5.6
       private-box: 0.3.1
       ssb-uri2: 2.4.1
+    dev: false
+
+  /ssb-lan@1.2.3(secret-stack@6.4.2):
+    resolution: {integrity: sha512-HJdc9oLIYO4u2eE9F3w8aXDP+idUiJ+ODcJKCKY8VKAlyn8psP4TC+Ol9VpT8NzFdOKQ5LnaAW9yThawfi2VUg==}
+    peerDependencies:
+      secret-stack: '>=6.2.0'
+    dependencies:
+      debug: 4.3.4
+      dgram-broadcast: 1.0.0
+      ip: 1.1.8
+      non-private-ip: 2.2.0
+      pull-notify: 0.1.2
+      secret-stack: 6.4.2
+      secret-stack-decorators: 1.1.0
+      ssb-keys: 8.5.0
+      ssb-ref: 2.16.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /ssb-meta-feeds@0.39.0:
