@@ -55,6 +55,7 @@ module.exports = function startSbot() {
     db2: {
       flushDebounce: 10,
       writeTimeout: 10,
+      hasDiskAccess: true,
     },
     tribes2: {
       // timeoutLow: opts.timeoutLow,
