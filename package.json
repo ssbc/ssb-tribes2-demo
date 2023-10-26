@@ -4,7 +4,6 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "postinstall": "patch-package",
     "start": "electron ."
   },
   "repository": {
@@ -20,8 +19,7 @@
   "devDependencies": {
     "electron": "25.2.0",
     "eslint": "8.44.0",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "patch-package": "7.0.0"
+    "eslint-plugin-react-hooks": "4.6.0"
   },
   "dependencies": {
     "pull-stream": "3.7.0",
@@ -33,7 +31,7 @@
     "ssb-box2": "7.1.0",
     "ssb-classic": "1.1.0",
     "ssb-conn": "6.0.4",
-    "ssb-db2": "7.1.1",
+    "ssb-db2": "github:ssbc/ssb-db2#hasdiskaccess-conf",
     "ssb-ebt": "9.1.2",
     "ssb-friends": "5.1.7",
     "ssb-keys": "8.5.0",
